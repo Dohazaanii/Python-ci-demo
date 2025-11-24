@@ -19,7 +19,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_subtract(self):
         """Test de la soustraction"""
-        self.assertEqual(subtract(5, 3), 5)
+        self.assertEqual(subtract(5, 3), 2)
         self.assertEqual(subtract(0, 5), -5)
 
 
