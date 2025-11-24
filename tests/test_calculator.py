@@ -2,11 +2,10 @@
 import unittest
 import sys
 import os
-
 # Ajouter le dossier parent au path pour importer src
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.calculator import add, subtract, multiply, divide, power
+from src.calucator import add, subtract, multiply, divide, power, modulo
 
 
 class TestCalculator(unittest.TestCase):
@@ -43,6 +42,15 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(power(2, 3), 8)
         self.assertEqual(power(5, 2), 25)
 
+    def test_modulo(self):
+        """Test du modulo"""
+        self.assertEqual(modulo(10, 3), 1)
+        self.assertEqual(modulo(15, 4), 3)
+
+    def test_modulo_by_zero(self):
+        """Test du modulo par zéro"""
+        with self.assertRaises(ValueError):
+            modulo(10, 0)
 
 if __name__ == '__main__':
     unittest.main()

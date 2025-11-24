@@ -21,3 +21,9 @@ def divide(a, b):
 def power(a, b):
     """Calcule a puissance b"""
     return a ** b
+
+def modulo(a, b):
+    """Calcule le modulo (reste de la division)"""
+    if b == 0:
+        raise ValueError("Modulo par zéro impossible!")
+    return a % b
